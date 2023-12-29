@@ -10,6 +10,7 @@ class Passwords extends Model
     use HasFactory;
 
     public $fillable = [
+        "user_id",
         "website",
         "username",
         "password",

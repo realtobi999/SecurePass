@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId("user_id");
             $table->string("website");
             $table->string("username");
-            $table->string("password");            
+            $table->string("password");
+            $table->timestamps();
         });
 
     }

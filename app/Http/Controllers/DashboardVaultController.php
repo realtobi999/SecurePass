@@ -8,6 +8,8 @@ class DashboardVaultController extends Controller
 {
     public function index()
     {
-        return view("app.vault.dashboard");
+        return view("app.vault.dashboard", [
+            "passwords" => auth()->user()->passwords
+        ]);
     }
 }

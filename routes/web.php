@@ -4,7 +4,7 @@ use App\Http\Controllers\DashboardVaultController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\StorePasswordController;
+use App\Http\Controllers\PasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,5 +32,11 @@ Route::post("vault/login", [LoginController::class, "store"]);
 Route::get("vault/dashboard", [DashboardVaultController::class, "index"])->middleware("auth");
 
 // Store password
-Route::get("vault/store", [StorePasswordController::class, "index"])->middleware("auth");
-Route::post("vault/store", [StorePasswordController::class, "store"])->middleware("auth");
+Route::get("vault/store", [PasswordController::class, "index"])->middleware("auth");
+Route::post("vault/store", [PasswordController::class, "store"])->middleware("auth");
+
+// Update password
+Route::put("vault/dashboard", [PasswordController::class, "update"])->middleware("auth")->name("password.update");
+
+// Delete password
+Route::delete("vault/dashboard", [PasswordController::class, "destroy"])->middleware("auth")->name("password.destroy");
