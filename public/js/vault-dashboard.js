@@ -1,5 +1,7 @@
 let currentOpenDropdown = null;
 
+
+
 function toggleDropdown(event, id) {
     event.preventDefault();
     const dropdownMenu = document.querySelector("#dropdownMenu" + id);

@@ -13,14 +13,14 @@
                 <!-- Website Name Input -->
                 <div class="mb-4">
                     <label for="website" class="block text-sm font-medium text-gray-600">Website Name</label>
-                    <input type="text" id="website" name="website" required
+                    <input type="text" id="website" name="website" 
                         class="mt-1 p-2 block w-full border rounded-md bg-gray-100 ">
                 </div>
 
                 <!-- Username Input -->
                 <div class="mb-4">
                     <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
-                    <input type="text" id="username" name="username" required
+                    <input type="text" id="username" name="username" 
                         class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
                 </div>
 
@@ -28,7 +28,7 @@
                 <div class="mb-4 relative" x-data="{ isVisible: false }">
                     <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
                     <div class="flex items-center">
-                        <input type="password" id="password" name="password" required
+                        <input type="password" id="password" name="password" 
                             class="mt-1 p-2 block w-full border rounded-md bg-gray-100 pr-10"
                             x-bind:type="isVisible ? 'text' : 'password'">
                         <button type="button"
@@ -45,6 +45,16 @@
                         </button>
                     </div>
                 </div>
+                
+                <div id="validationErrors" class="text-red-500 text-sm mt-3 mb-3">
+
+                    @if ($errors->any())
+                        @foreach($errors->all() as $error)
+                            <li class="text-red-500 text-sm mt-3 mb-3">{{ $error }}</li>
+                        @endforeach
+                    @endif
+
+                </div>
 
                 <!-- Submit Button -->
                 <div class="flex justify-end space-x-2">
@@ -60,3 +70,4 @@
         </div>
     </div>
 </div>
+
