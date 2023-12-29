@@ -32,7 +32,7 @@ Route::post("vault/login", [LoginController::class, "store"]);
 Route::get("vault/dashboard", [DashboardVaultController::class, "index"])->middleware("auth");
 
 // Store password
-Route::get("vault/store", [PasswordController::class, "index"])->middleware("auth");
+Route::get("vault/store", function () { return view("app.vault.store"); })->middleware("auth");
 Route::post("vault/store", [PasswordController::class, "store"])->middleware("auth");
 
 // Update password
