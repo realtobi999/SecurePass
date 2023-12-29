@@ -12,6 +12,8 @@
 
 @yield('content')
 
+@include("components.flash")
+
 </body>
 
 </html>
