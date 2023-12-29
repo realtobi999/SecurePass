@@ -20,4 +20,14 @@ class Passwords extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public $hidden = [
+        "password",
+    ];
+
+    public $casts = [
+        "password" => "encrypted",
+        "username" => "encrypted",
+        "website" => "encrypted",
+    ];
 }

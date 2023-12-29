@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('passwords', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id");
-            $table->string("website");
-            $table->string("username");
-            $table->string("password");
+            $table->text("website");
+            $table->text("username");
+            $table->text("password");
             $table->timestamps();
         });
 

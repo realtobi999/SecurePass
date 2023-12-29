@@ -7,7 +7,7 @@
         <h1 class="font-bold text-center mt-10 mb-6 text-4xl ">SecurePass <span class="text-blue-300 hover:text-blue-600 transition">Vault</span></h1>
         <p class="mt-2 text-m text-gray-500 text-center mb-2">Login to your vault</p>
     </div>
-    <form class="max-w-sm mx-auto bg-gray-200 p-6 rounded-lg shadow" action="/vault/login" method="POST">
+    <form class="max-w-sm mt-10 mx-auto bg-gray-200 p-6 rounded-lg shadow" action="/vault/login" method="POST">
     @csrf
     <div class="mb-5">
         <label for="email"  class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
