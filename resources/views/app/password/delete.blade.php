@@ -8,7 +8,7 @@
 
                 @method('DELETE')
                 
-                <input type="hidden" name="inputPasswordID" value="InitialValue">
+                <input type="hidden" name="passwordID" value="InitialValue">
 
                 <div class="flex justify-end space-x-2 text-center">
                     <button type="submit"

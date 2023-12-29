@@ -8,7 +8,7 @@
 
                 @method("PUT")
 
-                <input type="hidden" name="inputPasswordID" value="">
+                <input type="hidden" name="passwordID" value="">
 
                 <!-- Website Name Input -->
                 <div class="mb-4">

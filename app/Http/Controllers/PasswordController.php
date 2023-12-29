@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Passwords;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
 class PasswordController extends Controller
 {
@@ -14,28 +15,36 @@ class PasswordController extends Controller
 
     public function store()
     {
-        //dd(auth()->user()->id);
         $attributes = request()->validate([
             "website" => ["required", "string"],
             "username" => ["required", "string"],
             "password" => ["required", "string"],
         ]);
-    
-        $attributes["user_id"] = auth()->user()->id; 
+
+        $attributes["user_id"] = auth()->user()->id;
 
         Passwords::create($attributes);
-    
+
         return redirect("/vault/dashboard")->with("success", "Password saved!");
     }
 
     public function update()
     {
-        dd(request()->all());
+        $attributes = request()->validate([
+            "website" => ["required", "string"],
+            "username" => ["required", "string"],
+            "password" => ["required", "string"],
+        ]);
+
+        Passwords::find(request("passwordID"))->update($attributes);
+
+        return redirect("/vault/dashboard")->with("success", "Password updated!");
     }
 
     public function destroy()
     {
-        dd(request()->all());
+        Passwords::find(request("passwordID"))->delete();
+
+        return redirect("/vault/dashboard")->with("success", "Password deleted!");
     }
-    
 }
