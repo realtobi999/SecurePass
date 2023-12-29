@@ -2,7 +2,7 @@
     <div class="h-screen flex items-center justify-center">
         <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md z-50">
             <h2 class="text-2xl font-semibold mb-0">Edit your password</h2>
-            <!-- Password Form -->
+            <!-- Update Form -->
             <form action="{{ route('password.update') }}" method="POST" class="space-y-4">
                 @csrf
 

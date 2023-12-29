@@ -1,8 +1,10 @@
 let currentOpenDropdown = null;
+let currentPasswordId = null;
 
 
 
 function toggleDropdown(event, id) {
+    console.log("plpa");
     event.preventDefault();
     const dropdownMenu = document.querySelector("#dropdownMenu" + id);
 
@@ -22,9 +24,9 @@ function toggleDropdown(event, id) {
     }
 }
 
-function copyText(password) {
-    navigator.clipboard.writeText(password)
-    document.querySelector("#successMessageText").innerHTML = "Copied to clipboard";
+function copyText(text) {
+    navigator.clipboard.writeText(text)
+    document.querySelector("#successMessageText").innerHTML = "Copied to clipboard!";
     document.querySelector("#successMessage").classList.remove('hidden');
     setTimeout(function() {
         document.querySelector("#successMessage").classList.add('hidden');
@@ -54,3 +56,6 @@ function showDeletePassword() {
         passwordInput.value = currentPasswordId;
     }
 }
+
+
+

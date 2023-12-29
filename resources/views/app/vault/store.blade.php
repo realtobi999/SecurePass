@@ -10,7 +10,7 @@
 
 <div class="h-screen flex items-center justify-center">
     <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md">
-        <h2 class="text-2xl font-semibold mb-4">Add Password to Vault</h2>
+        <h2 class="text-2xl font-semibold mb-4">Store a new <span class="text-blue-500 hover:text-blue-600 transition">Password!</span></h2>
 
         <!-- Password Form -->
         <form action="/vault/store" method="post" class="space-y-4">
