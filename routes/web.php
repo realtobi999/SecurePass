@@ -29,7 +29,7 @@ Route::get("vault/login", [LoginController::class, "index"])->name("login");
 Route::post("vault/login", [LoginController::class, "store"]);
 
 // User dashboard
-Route::get("vault/dashboard", [DashboardVaultController::class, "index"])->middleware("auth");
+Route::get("vault/dashboard", function () { return view("app.vault.dashboard", ["passwords" => PasswordController::index()]); })->middleware("auth");
 
 // Store password
 Route::get("vault/store", function () { return view("app.vault.store"); })->middleware("auth");

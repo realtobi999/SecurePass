@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Password;
 
 class PasswordController extends Controller
 {
+
+    public static function index()
+    {
+        return auth()->user()->passwords;
+    }
+
     /**
      * Store a new password.
      *
