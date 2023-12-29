@@ -26,10 +26,10 @@ function toggleDropdown(event, id) {
 
 function copyText(text) {
     navigator.clipboard.writeText(text)
-    document.querySelector("#successMessageText").innerHTML = "Copied to clipboard!";
-    document.querySelector("#successMessage").classList.remove('hidden');
+    document.querySelector("#successMessageJSText").innerHTML = "Copied to clipboard!";
+    document.querySelector("#successMessageJS").classList.remove('hidden');
     setTimeout(function() {
-        document.querySelector("#successMessage").classList.add('hidden');
+        document.querySelector("#successMessageJS").classList.add('hidden');
     }, 3000);
         
 }
