@@ -22,17 +22,12 @@ function toggleDropdown(event, id) {
 
 function copyText(password) {
     navigator.clipboard.writeText(password)
-        .then(function() {
-            document.querySelector("#successMessageText").innerHTML = "Copied to clipboard";
-            document.querySelector("#successMessage").classList.remove('hidden');
-            setTimeout(function() {
-                document.querySelector("#successMessage").classList.add('hidden');
-            }, 3000);
-        })
-        .catch(function(err) {
-            console.error('Unable to copy password', err);
-            alert('Error copying password. Please try again.');
-        });
+    document.querySelector("#successMessageText").innerHTML = "Copied to clipboard";
+    document.querySelector("#successMessage").classList.remove('hidden');
+    setTimeout(function() {
+        document.querySelector("#successMessage").classList.add('hidden');
+    }, 3000);
+        
 }
 
 function showEditPassword() {
@@ -41,7 +36,7 @@ function showEditPassword() {
     editPasswordElement.classList.toggle('hidden');
 
     if (currentPasswordId !== null) {
-        var passwordInput = document.querySelector("#editPassword [name='inputPasswordID']");
+        var passwordInput = document.querySelector("#editPassword [name='passwordID']");
         passwordInput.value = currentPasswordId;
     }
 
@@ -53,7 +48,7 @@ function showDeletePassword() {
     deletePasswordElement.classList.toggle('hidden');
 
     if (currentPasswordId !== null) {
-        var passwordInput = document.querySelector("#deletePassword [name='inputPasswordID']");
+        var passwordInput = document.querySelector("#deletePassword [name='passwordID']");
         passwordInput.value = currentPasswordId;
     }
 }
