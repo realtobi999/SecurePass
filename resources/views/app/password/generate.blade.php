@@ -27,17 +27,17 @@
             </div>
 
             <div class="flex items-center text-gray-700">
-                <input name="includeUppercase" type="checkbox" id="includeUppercase" checked class="rounded-sm">
+                <input name="includeUppercase" type="checkbox" id="includeUppercase" class="rounded-sm">
                 <label class="ml-2" for="includeUppercase">Include Uppercase</label>
             </div>
 
             <div class="flex items-center text-gray-700">
-                <input name="includeNumbers" type="checkbox" id="includeNumbers" checked class="rounded-sm">
+                <input name="includeNumbers" type="checkbox" id="includeNumbers" class="rounded-sm">
                 <label class="ml-2" for="includeNumbers">Include Numbers</label>
             </div>
 
             <div class="flex items-center text-gray-700">
-                <input name="includeSymbols" type="checkbox" id="includeSymbols" checked class="rounded-sm">
+                <input name="includeSymbols" type="checkbox" id="includeSymbols" class="rounded-sm">
                 <label class="ml-2" for="includeSymbols">Include Symbols</label>
             </div>
 
