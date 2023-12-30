@@ -14,10 +14,10 @@
                                 </path>
                             </svg>
                         </button>
-                        <a href="vault/dashboard" class="flex ms-2 md:me-24">
-                            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+                        <a href="/vault/dashboard" class="flex ms-2 md:me-24">
+                            <ion-icon class="h-8 w-8 mr-4 text-blue-700" name="shield-half-outline"></ion-icon>
                             <span
-                                class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SecurePass</span>
+                                class="text-blue-700 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SecurePass</span>
                         </a>
                     </div>
                     <div class="flex items-center">

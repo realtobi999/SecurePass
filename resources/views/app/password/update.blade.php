@@ -1,7 +1,7 @@
 <div id="editPassword" class="bg-black bg-opacity-50 fixed top-0 left-0 w-full h-full z-40 hidden">
     <div class="h-screen flex items-center justify-center">
         <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md z-50">
-            <h2 class="text-2xl font-semibold mb-0">Edit your password</h2>
+            <h2 class="text-2xl font-semibold mb-4">Edit your <span class="text-blue-500 hover:text-blue-600 transition">Password!</span></h2>
             <!-- Update Form -->
             <form action="{{ route('password.update') }}" method="POST" class="space-y-4">
                 @csrf
@@ -34,23 +34,7 @@
                 <!-- Password Input -->
                 <div class="mb-4 relative" x-data="{ isVisible: false }">
                     <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
-                    <div class="flex items-center">
-                        <input type="password" id="password" name="password" 
-                            class="mt-1 p-2 block w-full border rounded-md bg-gray-100 pr-10"
-                            x-bind:type="isVisible ? 'text' : 'password'">
-                        <button type="button"
-                            class="absolute right-2 top-1/2 transform -translate-y-1/2 focus:outline-none mt-3"
-                            @click="isVisible = !isVisible">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                </path>
-                            </svg>
-                        </button>
-                    </div>
+                     @include("components.passwordInput")
                 </div>
                 
                 <div id="validationErrors" class="text-red-500 text-sm mt-3 mb-3">

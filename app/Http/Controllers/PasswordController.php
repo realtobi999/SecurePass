@@ -22,7 +22,6 @@ class PasswordController extends Controller
      */
     public function store()
     {
-        //dd(request()->all());
         $attributes = request()->validate([
             "website" => ["required", "string" ,"max:255"],
             "username" => ["required", "string" ,"max:255"],
