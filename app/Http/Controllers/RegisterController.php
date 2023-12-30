@@ -24,6 +24,6 @@ class RegisterController extends Controller
 
         $users = User::create($attributes);
 
-        return redirect("/")->with("success", "Your account has been created!");
+        return redirect("/vault/login")->with("success", "Your account has been created!");
     }
 }
