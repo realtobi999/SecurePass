@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SecurePass Vault</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
@@ -18,8 +18,8 @@
     @include("components.partials.sidebar")
 
     {{-- CONTENT --}}
-    <div class="p-4 sm:ml-64">
-        <div class="p-4 dark:border-gray-700 mt-14">
+    <div class="p-4 sm:ml-64 bg-gray-100 h-screen">
+        <div class="p-4 dark:border-gray-700 mt-14 ">
             @yield('content')
         </div>
     </div>
