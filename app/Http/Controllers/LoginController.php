@@ -30,5 +30,11 @@ class LoginController extends Controller
         return redirect("/vault/dashboard")->with("success", "You are now logged in!");
     }
 
+    public function destroy()
+    {
+        auth()->logout();
+        return redirect("/")->with("success", "You have been logged out!");
+    }
+
 
 }

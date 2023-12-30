@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PasswordController;
@@ -18,27 +18,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", [HomeController::class, "index"]);
 
-// User registration routes
+// Home page 
+Route::get("/", function() { return view("index");});
+
+
+// User Authentication 
 Route::get("/vault/register", [RegisterController::class, "index"]);
 Route::post("/vault/register", [RegisterController::class, "store"]);
 
-// User login routes
 Route::get("vault/login", [LoginController::class, "index"])->name("login");
 Route::post("vault/login", [LoginController::class, "store"]);
+Route::get("vault/logout", [LoginController::class, "destroy"])->name("logout");
 
-// User dashboard
-Route::get("vault/dashboard", function () { return view("app.vault.dashboard", ["passwords" => PasswordController::index()]); })->middleware("auth");
 
-// Store password
-Route::get("vault/store", function () { return view("app.password.store"); })->middleware("auth");
-Route::post("vault/store", [PasswordController::class, "store"])->middleware("auth");
+// User Vault - CRUD Passwords
+Route::middleware("auth")->group(function () {
+    Route::prefix("vault")->group(function () {
 
-// Update password
-Route::put("vault/dashboard", [PasswordController::class, "update"])->middleware("auth")->name("password.update");
+        // Create password
+        Route::get("store", function () { return view("app.password.store"); });
+        Route::post("store", [PasswordController::class, "store"]);
 
-// Delete password
-Route::delete("vault/dashboard", [PasswordController::class, "destroy"])->middleware("auth")->name("password.destroy");
+        // (Read) User Dashboard
+        Route::get("dashboard", function () { return view("app.vault.dashboard", ["passwords" => PasswordController::index()]); });
 
-Route::match(['get', 'post'], "vault/password-generator", [PasswordGenerateController::class, "index"]);
+        // Update password
+        Route::put("dashboard", [PasswordController::class, "update"]);
+        
+        // Delete password
+        Route::delete("dashboard", [PasswordController::class, "destroy"]);
+
+        // Password generator
+        Route::match(['get', 'post'], "password-generator", [PasswordGenerateController::class, "index"]);
+    });
+});
