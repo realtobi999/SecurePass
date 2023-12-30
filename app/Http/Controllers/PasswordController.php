@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Passwords;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Password;
 
 class PasswordController extends Controller
@@ -21,10 +22,12 @@ class PasswordController extends Controller
      */
     public function store()
     {
+        //dd(request()->all());
         $attributes = request()->validate([
             "website" => ["required", "string" ,"max:255"],
             "username" => ["required", "string" ,"max:255"],
             "password" => ["required", "string" ,"min:8" ,"max:255"],
+            "uri" => ["nullable","string" ,"max:255"],
         ]);
 
         $attributes["user_id"] = auth()->user()->id;
@@ -46,6 +49,7 @@ class PasswordController extends Controller
                 "website" => ["nullable", "max:255"],
                 "username" => [ "nullable", "max:255"],
                 "password" => ["nullable", "min:8" ,"max:255"],
+                "uri" => ["nullable", "max:255"],
             ]);
             $attributes = $this->WhereNotNull($attributes);
 

@@ -14,6 +14,7 @@ class Passwords extends Model
         "website",
         "username",
         "password",
+        "uri",
     ];
 
     public function user()

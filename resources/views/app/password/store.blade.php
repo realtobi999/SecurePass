@@ -19,13 +19,19 @@
             <!-- Website Name Input -->
             <div class="mb-4">
                 <label for="website" class="block text-sm font-medium text-gray-600">Website Name</label>
-                <input type="text" id="website" name="website" required class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
+                <input type="text" id="website" name="website" value="{{ old('website') }}" required class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
+            </div>
+
+            <!-- Website Name Input -->
+            <div class="mb-4">
+                <label for="uri" class="block text-sm font-medium text-gray-600">URI <span class="text-gray-500">(optional)</span></label>
+                <input type="text" id="uri" name="uri" value="{{ old('uri') }}" class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
             </div>
 
             <!-- Username Input -->
             <div class="mb-4">
                 <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
-                <input type="text" id="username" name="username" required class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
+                <input type="text" id="username" name="username" value="{{ old('username') }}" required class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
             </div>
 
             <!-- Password Input -->

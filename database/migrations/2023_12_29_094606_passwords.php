@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('passwords', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id");
+            $table->foreignId("user_id")->constrained()->cascadeOnDelete();
+            $table->string("uri")->nullable();
             $table->text("website", 500);
             $table->text("username", 500);
             $table->text("password", 500);
