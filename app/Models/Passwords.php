@@ -31,4 +31,15 @@ class Passwords extends Model
         "username" => "encrypted",
         "website" => "encrypted",
     ];
+
+    // Only add "https://" if $value is not null and does not already start with "https://"
+    public function setUriAttribute($value)
+    {
+        if ($value !== null && strpos($value, 'https://') !== 0) {
+            $this->attributes['uri'] = 'https://' . $value;
+        } else {
+            $this->attributes['uri'] = $value;
+        }
+    }
+
 }

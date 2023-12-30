@@ -14,8 +14,13 @@
         <!-- Website Name -->
         <th scope="row"
             class="{{ $password->uri ? 'text-blue-600' : 'text-gray-900 ' }} px-6 py-4 font-medium whitespace-nowrap dark:text-white">
-            <a href="{{ $password->uri ? $password->uri : '' }}"
-                target="{{ $password->uri ? '_blank' : '' }}">{{ $password->website }}</a>
+            @if(isset($password->uri))
+                <a href="{{ $password->uri }}" target="_blank">
+                    {{ $password->website }}
+                </a>
+            @else
+            {{ $password->website }}
+            @endif
         </th>
 
         <!-- Username -->
