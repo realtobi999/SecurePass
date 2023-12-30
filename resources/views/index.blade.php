@@ -3,9 +3,9 @@
 @section("content")
 
 <div class="bg-gray-100 h-screen flex items-center justify-center">
-    <div class="max-w-md w-full p-6 bg-white rounded-md border border-gray-300 shadow-md">
+    <div class="max-w-md w-full p-6 bg-white rounded-md border border-gray-300 shadow-md text-center">
         <h2 class="text-3xl font-semibold mb-4">Welcome to <span class="text-blue-500 hover:text-blue-600 transition">SecurePass</span></h2>
-        <p class="mb-5">Continue to your Vault and store passwords or register a brand new account!</p>
+        <p class="mb-5 text-gray-500 text-left">Continue to your Vault and store passwords or register a brand new account!</p>
         
         <div class="grid grid-cols-1 gap-4">
 

@@ -6,6 +6,7 @@
 @endsection
 
 @section('content')
+
 {{-- Page title --}}
 <div class="border-b-4 border-blue-400">
     <h1 class="text-3xl p-4 text-blue-700 font-bold">
@@ -38,6 +39,7 @@
                 </th>
             </tr>
         </thead>
+
         {{-- All users passwords --}}
         <tbody class="">
             @include("app.password.index")
@@ -52,9 +54,7 @@
     @include("app.password.delete")
 
     <!-- JS success message -->
-    <div id="successMessageJS" class="hidden fixed bg-green-300 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-md z-50">
-        <p id="successMessageJSText"></p>
-    </div>
+    @include("components.JS-flash")
 
 
     @endsection
