@@ -44,10 +44,10 @@ Route::middleware("auth")->group(function () {
         Route::get("dashboard", function () { return view("app.vault.dashboard", ["passwords" => PasswordController::index()]); });
 
         // Update password
-        Route::put("dashboard", [PasswordController::class, "update"]);
+        Route::put("dashboard", [PasswordController::class, "update"])->name("password.update");
         
         // Delete password
-        Route::delete("dashboard", [PasswordController::class, "destroy"]);
+        Route::delete("dashboard", [PasswordController::class, "destroy"])->name("password.destroy");
 
         // Password generator
         Route::match(['get', 'post'], "password-generator", [PasswordGenerateController::class, "index"]);
