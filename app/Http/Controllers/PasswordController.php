@@ -22,9 +22,9 @@ class PasswordController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            "website" => ["required", "string"],
-            "username" => ["required", "string"],
-            "password" => ["required", "string"],
+            "website" => ["required", "string" ,"max:255"],
+            "username" => ["required", "string" ,"max:255"],
+            "password" => ["required", "string" ,"min:8" ,"max:255"],
         ]);
 
         $attributes["user_id"] = auth()->user()->id;

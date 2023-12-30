@@ -49,6 +49,19 @@
                     </button>
                 </div>
             </div>
+            <p class="mt-2 text-sm text-gray-500">Please pick a strong password or use our <a href="/vault/password-generator" class="text-blue-500 hover:text-blue-600 transition">Password Generator</a>!
+
+
+
+            <div id="validationErrors" class="text-red-500 text-sm mt-3 mb-3">
+
+                @if ($errors->any())
+                    @foreach($errors->all() as $error)
+                        <li class="text-red-500 text-sm mt-3 mb-3">{{ $error }}</li>
+                    @endforeach
+                @endif
+
+            </div>
 
             <!-- Submit Button -->
             <button type="submit"
