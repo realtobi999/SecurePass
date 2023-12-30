@@ -9,11 +9,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 
     @yield("additional-head-elements")
+    
 </head>
 
 <body class="bg-gray-100">
+
     {{-- HEADER --}}
     @include("components.partials.header")
+
     {{-- SIDEBAR--}}
     @include("components.partials.sidebar")
 
@@ -33,7 +36,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-
+    {{-- FLOWBITE --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 

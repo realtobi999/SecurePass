@@ -4,7 +4,6 @@ let currentPasswordId = null;
 
 
 function toggleDropdown(event, id) {
-    console.log("plpa");
     event.preventDefault();
     const dropdownMenu = document.querySelector("#dropdownMenu" + id);
 
