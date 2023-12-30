@@ -5,7 +5,7 @@
 </div>
 @elseif ($errors->any())
 <!-- Validation errors -->
-<div id="errorMessage" class="fixed bg-green-300 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-md z-50">
+<div id="errorMessage" class="fixed bg-red-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-md z-50">
     <ul>
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
