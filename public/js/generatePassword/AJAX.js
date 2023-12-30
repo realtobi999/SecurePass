@@ -22,8 +22,6 @@ $(document).ready(function () {
                 // Update the displayed password
                 passwordDisplay.text(generatedPassword);
 
-                // Optionally, you can also clear the input field
-                // $('#password').val('');
             },
             error: function (error) {
                 console.log(error);

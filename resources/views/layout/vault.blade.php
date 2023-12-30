@@ -11,7 +11,7 @@
     @yield("additional-head-elements")
 </head>
 
-<body>
+<body class="bg-gray-100">
     {{-- HEADER --}}
     @include("components.partials.header")
     {{-- SIDEBAR--}}
