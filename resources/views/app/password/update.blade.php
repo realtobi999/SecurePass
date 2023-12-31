@@ -10,42 +10,15 @@
 
                 <input type="hidden" name="passwordID" value="">
 
-                <!-- Website Name Input -->
-                <div class="mb-4">
-                    <label for="website" class="block text-sm font-medium text-gray-600">Website Name</label>
-                    <input type="text" id="website" name="website" 
-                        class="mt-1 p-2 block w-full border rounded-md bg-gray-100 ">
-                </div>
 
-                <!-- Uri Input -->
-                <div class="mb-4">
-                    <label for="uri" class="block text-sm font-medium text-gray-600">URI</label>
-                    <input type="text" id="uri" name="uri" 
-                        class="mt-1 p-2 block w-full border rounded-md bg-gray-100 ">
-                </div>
+                <!-- Website, URI, Username Input -->
+                @include("components.form._websiteUriUsername")
 
-                <!-- Username Input -->
-                <div class="mb-4">
-                    <label for="username" class="block text-sm font-medium text-gray-600">Username</label>
-                    <input type="text" id="username" name="username" 
-                        class="mt-1 p-2 block w-full border rounded-md bg-gray-100">
-                </div>
 
                 <!-- Password Input -->
-                <div class="mb-4 relative" x-data="{ isVisible: false }">
-                    <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
-                     @include("components.passwordInput")
-                </div>
+                @include("components.form.password", ["isRequired" => false])
                 
-                <div id="validationErrors" class="text-red-500 text-sm mt-3 mb-3">
-
-                    @if ($errors->any())
-                        @foreach($errors->all() as $error)
-                            <li class="text-red-500 text-sm mt-3 mb-3">{{ $error }}</li>
-                        @endforeach
-                    @endif
-
-                </div>
+                @include("components.errors")
 
                 <!-- Submit Button -->
                 <div class="flex justify-end space-x-2">

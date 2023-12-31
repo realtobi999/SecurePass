@@ -50,6 +50,6 @@ Route::middleware("auth")->group(function () {
         Route::delete("dashboard", [PasswordController::class, "destroy"])->name("password.destroy");
 
         // Password generator
-        Route::match(['get', 'post'], "password-generator", [PasswordGenerateController::class, "index"]);
+        Route::get("password-generator", function() { return view("app.password.generate"); });
     });
 });
