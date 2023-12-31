@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     public function passwords()
     {
-        return $this->hasMany(Passwords::class);
+        return $this->hasMany(Passwords::class)->orderBy("updated_at", "desc");
     }
 }
