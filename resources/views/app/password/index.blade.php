@@ -3,11 +3,13 @@
 
         <!-- Dropdown menu -->
         <td class="px-6 py-4 relative" onclick="toggleDropdown(event, {{ $password->id }})">
+
+
             <div class="dropdown-toggle cursor-pointer">
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
             </div>
-            <!-- Dropdown panel, hidden by default -->
             @include('components.dropdown-password')
+            <!-- Dropdown panel, hidden by default -->
 
         </td>
 

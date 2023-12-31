@@ -21,7 +21,7 @@
 
         {{-- Name Input --}}
         @include("components.form.userAuthInput", [
-        "value" => "name",
+        "value" => "username",
         "label" => "How should we call you?",
         "type" => "text",
         "placeholder" => "Your Name"])
@@ -48,7 +48,7 @@
         Already have an account? Great! 
         <a href="/vault/login" class="text-blue-600 hover:underline">
         Login to vault</a>.</p>
-        
+
         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Register</button>
     </form>
 </div>
