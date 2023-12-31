@@ -6,13 +6,14 @@ use App\Models\Passwords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Password;
+use App\Models\User;
 
 class PasswordController extends Controller
 {
 
     public static function index()
     {
-        return auth()->user()->passwords;
+        return auth()->user()->passwords()->simplePaginate(5);
     }
 
 
@@ -99,5 +100,4 @@ class PasswordController extends Controller
 
         return $filteredAttributes->toArray();
     }
-
 }

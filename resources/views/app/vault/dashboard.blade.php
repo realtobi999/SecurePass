@@ -18,7 +18,7 @@
 </div>
 
 {{-- Passwords table --}}
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6 ">
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -46,6 +46,10 @@
         </tbody>
     </table>
 
+    {{-- Pagination --}}
+    <div class="p-4">
+        {{ $passwords->links() }}
+    </div>
 
     {{-- Update Password Form --}}
     @include("app.password.update")
@@ -55,6 +59,5 @@
 
     <!-- JS success message -->
     @include("components.JS-flash")
-
 
     @endsection
