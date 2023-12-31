@@ -44,7 +44,7 @@ Route::middleware("auth")->group(function () {
         Route::get("dashboard", function () { return view("app.vault.dashboard", ["passwords" => PasswordController::index()]); });
 
         // Update password
-        Route::patch("dashboard", [PasswordController::class, "update"])->name("password.update");
+        Route::put("dashboard", [PasswordController::class, "update"])->name("password.update");
         
         // Delete password
         Route::delete("dashboard", [PasswordController::class, "destroy"])->name("password.destroy");

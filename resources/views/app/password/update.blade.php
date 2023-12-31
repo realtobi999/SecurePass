@@ -6,7 +6,7 @@
             <form action="{{ route('password.update') }}" method="POST" class="space-y-4">
                 @csrf
 
-                @method("PATCH")
+                @method("PUT")
 
                 <input type="hidden" name="passwordID" value="">
 
