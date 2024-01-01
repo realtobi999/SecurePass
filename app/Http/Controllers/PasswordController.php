@@ -26,8 +26,10 @@ class PasswordController extends Controller
                 "password" => ["required", "string", "min:8", "max:255"],
                 "uri" => ["nullable", "string", "max:255"],
             ]);
-
+            
             $attributes["user_id"] = auth()->user()->id;
+
+            $this->authorizeUserOrFail();
 
             Passwords::create($attributes);
 
